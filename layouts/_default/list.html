@@ -1,0 +1,19 @@
+{{ define "main" }}
+	<div class="post-list">
+		{{ if or .Title .Content }}
+		<div class="entry">
+			{{ with .Title }}<h2 class="entry-title">{{ . }}</h2>{{ end }}
+			{{ with .Content }}<div class="entry-content">{{ . }}</div>{{ end }}
+		</div><!-- /.entry -->
+		{{ end }}
+
+		{{ range .Paginator.Pages }}
+			{{ .Render "summary" }}
+		{{ end }}
+		{{ partial "pagination.html" . }}
+	</div><!-- /.post-list -->
+	<div class="sidebar">
+		{{ partial "sidebar.html" . }}
+	</div><!-- /.sidebar -->
+	<div class="clearfix"></div>
+{{ end }}

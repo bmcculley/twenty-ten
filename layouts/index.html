@@ -1,0 +1,17 @@
+{{ define "main" }}
+	<main id="content">
+		<div class="post-list">
+			{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+			{{ range $paginator.Pages }}
+				{{ .Render "summary" }}
+			{{ end }}
+			<div class="paginator">
+				{{ partial "pagination.html" . }}
+			</div>
+		</div>
+	</main>
+	<div class="sidebar">
+		{{ partial "sidebar.html" . }}
+	</div>
+	<div class="clearfix"></div>
+{{ end }}

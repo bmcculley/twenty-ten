@@ -1,0 +1,22 @@
+<header class="header">
+	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+	<div class="site-subtitle">{{ .Site.Params.Subtitle }}</div>
+	<div class="header-image">
+		<img src="{{ .Site.BaseURL }}imgs/{{ .Site.Params.Headerimage | default "path.jpg" }}">
+	</div>
+	<div class="navbar-btn">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+	{{ with .Site.Menus.main }}
+	<nav class="menu">
+		<ul>
+			{{ range . }}
+			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+			{{ end }}
+		</ul>
+	</nav><!-- /#menu -->
+	{{ end }}
+</header>
+<div class="clearfix"></div>

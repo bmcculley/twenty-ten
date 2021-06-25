@@ -1,0 +1,30 @@
+{{ define "main" }}
+	<section class="post-list entry">
+		<article>
+			<h1 class="entry-title">{{ .Title }}</h1>
+
+			<div class="entry-meta" datetime='{{ .Date.Format "02.01.2006 15:04" }}'>Posted on {{ .Date.Format "Jan 2, 2006" }} by {{ .Site.Params.author }}</div>
+			<div class="entry-content">
+				{{ .Content }}
+				<div class="entry-meta">
+					<ul class="tags">
+						{{ range .Params.tags }}
+						<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+						{{ end }}
+					</ul>
+				</div>
+			</div>
+			
+			{{ if .Draft }}
+			<div class="comments">
+    			<h3>Comments</h3>
+				{{ template "_internal/disqus.html" . }}
+			</div>
+			{{ end }}
+		</article>
+	</section>
+	<div class="sidebar">
+		{{ partial "sidebar.html" . }}
+	</div>
+    <div class="clearfix"></div>
+{{ end }}
