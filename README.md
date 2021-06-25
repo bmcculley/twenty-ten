@@ -4,6 +4,8 @@ Twenty Ten — a blogging theme for [Hugo](https://gohugo.io/). Start bloggin wi
 
 ![Twenty Ten theme screenshot](https://github.com/bmcculley/twenty-ten/blob/master/images/splash.png)
 
+![Twenty Ten theme screenshot](https://github.com/bmcculley/twenty-ten/blob/master/images/screenshot-dark.png)
+
 ## Installation
 
 In your Hugo site `themes` directory, run:
