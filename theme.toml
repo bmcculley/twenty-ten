@@ -1,11 +1,11 @@
-name = "Twenty Ten"
+name = "twenty-ten"
 license = "MIT"
 licenselink = "https://github.com/bmcculley/twenty-ten/blob/master/LICENSE"
 description = "Starter Hugo theme for developers."
 homepage = "https://github.com/bmcculley/twenty-ten/"
 tags = ["blog", "header image", "mobile friendly", "two columns"]
 features = ["blog"]
-min_version = 0.20
+min_version = 0.63
 
 [author]
   name = "bmcculley"
